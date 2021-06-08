@@ -23,7 +23,7 @@ const ImageCarousel = ({images} : {image:[string]}) =>{
                 }}
                 />
 
-                <View style={styles.dots}>
+                {/* <View style={styles.dots}>
                     {images.map((images,index)=>(
                     <View 
                         style={[
@@ -33,7 +33,7 @@ const ImageCarousel = ({images} : {image:[string]}) =>{
                             }
                         ]}/>
                     ))}
-                </View>
+                </View> */}
 
                 
         </View>
