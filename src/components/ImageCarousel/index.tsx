@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import{View,Image, FlatList, StyleSheet,useWindowDimensions} from 'react-native';
 //import { Image } from 'react-native-elements/dist/image/Image';
 
 const ImageCarousel = ({images} : {image:[string]}) =>{
-    const [activeIndex, setActiveIndex]= useState(0);
+    const [activeIndex, setActiveIndex]= useState(1);
     const windowWidht = useWindowDimensions().width;
+
+    const onFlatListUpdate = useCallback(({ viewableItems })=>{
+        if(viewableItems.length > 0){
+            setActiveIndex(viewableItems[0].index || 0);
+        }
+        console.log(viewableItems);
+    },[])
     return(
         <View style={styles.root}>
             <FlatList
@@ -17,23 +24,23 @@ const ImageCarousel = ({images} : {image:[string]}) =>{
                 snapToInterval={windowWidht -20} 
                 snapToAlignment={'center'}
                 decelerationRate={'fast'}
-                viewabilityConfig {{viewAreaCoveragePercentThreshold:50}}
-                onViewableItemsChanged={({ viewableItems })=>{
-                    console.log(viewableItems);
+                viewabilityConfig = {{
+                    viewAreaCoveragePercentThreshold:50,
                 }}
+                onViewableItemsChanged = {onFlatListUpdate}
                 />
 
-                {/* <View style={styles.dots}>
+                <View style={styles.dots}>
                     {images.map((images,index)=>(
                     <View 
                         style={[
                             styles.dot,
                             {
-                                backgroundColor: index == activeIndex  ? '#c9c9c9' : '#ededed',
+                                backgroundColor: index === activeIndex  ? '#c9c9c9' : '#ededed',
                             }
                         ]}/>
                     ))}
-                </View> */}
+                </View>
 
                 
         </View>

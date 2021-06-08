@@ -12,7 +12,7 @@
  import {SafeAreaView,StatusBar, useColorScheme,} from 'react-native';
 
  import {Colors} from 'react-native/Libraries/NewAppScreen';
- //import HomeScreen from './src/screens/HomeScreen';
+ import HomeScreen from './src/screens/HomeScreen';
  import ProductScreen from './src/screens/ProductScreen';
  //import Icon from 'react-native-vector-icons/FontAwesome';
 
