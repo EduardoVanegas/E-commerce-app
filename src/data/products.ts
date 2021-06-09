@@ -5,7 +5,7 @@ export default [
     image: 'https://www.eluniversal.com.mx/sites/default/files/2019/03/29/tacos_al_pastor.jpg',
     avgRating: 4.2,
     ratings: 4500,
-    price: "12,000",
+    price: 12000,
     oldPrice: 24.06,
   },
   {
@@ -22,8 +22,9 @@ export default [
     title: "Mi mejor amiga es ana",
     image: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/products/imac1.jpg',
     avgRating: 3.8,
-    ratings: "1,900",
+    ratings: 1900,
     price: 4206.9,
+    oldPrice: 34.06,
   },
   {
     id: '4',

@@ -11,7 +11,7 @@ interface ProductsItemProps{
         avgRating: number;
         ratings: number;
         price: string;
-        oldPrice?: number;
+        oldPrice? : number;
     };
 }
 
