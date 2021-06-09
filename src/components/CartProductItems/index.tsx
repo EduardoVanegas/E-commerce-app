@@ -20,7 +20,7 @@ interface CartProductItemProps{
         };
     };
 }
-
+{/*El marco se rifo esto*/}
 const CartProductItem = ({ cartItem }:CartProductItemProps) =>{
     const {quantity : quantityProp,item} = cartItem; 
     const [quantity, setQuantity] = useState(quantityProp);
