@@ -2,13 +2,14 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
     root:{
-        flexDirection: 'row',
-        borderWidth: 0.5,
+        borderWidth: 1,
         borderColor: '#d1c8b2',
-        borderRadius: 5,
+        borderRadius: 10,
         backgroundColor: '#f7dfdc',
         marginVertical: 5,
-
+    },
+    row : {
+        flexDirection: 'row',
     },
     image:{
         //width: 150,
@@ -37,8 +38,9 @@ const styles = StyleSheet.create({
     star:{
         margin: 2,
     },
-    
-
+    quantityContainer:{
+        margin: 10,
+    }
 });
 
 export default styles;

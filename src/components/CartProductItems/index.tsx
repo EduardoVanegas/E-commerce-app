@@ -26,9 +26,9 @@ const CartProductItem = ({ cartItem }:CartProductItemProps) =>{
     const [quantity, setQuantity] = useState(quantityProp);
 
     return(
-        <View>
+        <View style={styles.root}>
             <View>
-                <View style={styles.root}>
+                <View style={styles.row}>
                 {/*<Image style={styles.image} source={require('./imgs/aguila.jpg')} />*/}
                     <Image style={styles.image} source={{uri: item.image}} />
                     <View style={styles.rightContainer}>
@@ -36,22 +36,22 @@ const CartProductItem = ({ cartItem }:CartProductItemProps) =>{
                         <Text style={styles.title} numberOfLines={3}>{item.title}</Text>
                         <View style={styles.raitingStars}>
                             {[0,0,0,0,0].map((el, i)=>
-                            <FontAwesome key={'${item.id}=${i}'} style={styles.star} name={i < Math.floor(item.avgRating) ? 'star': 'star-o'} size={20} color={"#e47911"} />
+                            <FontAwesome 
+                                key={'${item.id}=${i}'} 
+                                style={styles.star} 
+                                name={i < Math.floor(item.avgRating) ? 'star': 'star-o'} 
+                                size={20} 
+                                color={"#e47911"} />
                             )}
-                            {/*<FontAwesome style={styles.star} name="star" size={20} color={"#e47911"} />
-                            <FontAwesome style={styles.star} name="star" size={20} color={"#e47911"} />
-                            <FontAwesome style={styles.star} name="star" size={20} color={"#e47911"} />
-                            <FontAwesome style={styles.star} name="star-half-full" size={20} color={"#e47911"} />
-                            <FontAwesome style={styles.star} name="star-o" size={20} color={"#e47911"} />*/}
                             <Text>{item.ratings}</Text>
-                            {/*<Text>4500</Text>*/}
                         </View>
                         <Text style={styles.price}>Precio de compra ${item.price} MXN</Text>
-                    {/* <Text style={styles.price}>Precio de compra $12,500 MXN</Text>*/}
                     </View>
                 </View> 
             </View>
-            <QuantiyiSelector quantity = {quantity} setQuantity = {setQuantity} />
+            <View style={styles.quantityContainer}>
+                <QuantiyiSelector quantity = {quantity} setQuantity = {setQuantity} />  
+            </View>
         </View>
         
     );
