@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
         margin: 2,
     },
     quantityContainer:{
-        margin: 10,
+        margin: 5,
     }
 });
 

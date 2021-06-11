@@ -15,6 +15,7 @@
  import HomeScreen from './src/screens/HomeScreen';
  import ProductScreen from './src/screens/ProductScreen';
  import ShoopingCartScreen from './src/screens/ShoopingCartScreen';
+ import AddressScreen from './src/screens/AddressScreen';
  //import Icon from 'react-native-vector-icons/FontAwesome';
 
  const App = () => {
@@ -27,7 +28,8 @@
    return (
      <SafeAreaView style={backgroundStyle}>
        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-       <ShoopingCartScreen/>
+       {/*<ShoopingCartScreen/>*/}
+       <AddressScreen/>
      </SafeAreaView>
    );
  };
