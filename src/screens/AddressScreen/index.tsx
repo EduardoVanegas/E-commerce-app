@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {View,Text,TextInput,Alert} from 'react-native';
+import {View,Text,TextInput,Alert, ScrollView, KeyboardAvoidingView} from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 import CountryList from 'country-list';
 import Button from '../../components/Button';
@@ -50,63 +50,65 @@ const AddressScren = ()=>{
     };
 
     return(
-        <View style={styles.root}>
-            <View style={styles.row}>
-                <Picker selectedValue={country} onValueChange={setCountry}>
-                    {countries.map(country =>(
-                        <Picker.Item value={country.code} label={country.name}/>
-                    ))}  
-                </Picker>
-            </View>
-            {/*FullName*/}
-            <View style={styles.row}>
-                <Text style={styles.label}>Nombre (Empezando por apellidos)</Text>
-                <TextInput style={styles.input} placeholder="Nombre Completo" value={fullname} onChangeText={setFullname}></TextInput>
-            </View>
-            {/*PhoneNumber*/}
-            <View style={styles.row}>
-                <Text style={styles.label}>Numero de Teléfono</Text>
-                <TextInput 
-                    style={styles.input} 
-                    placeholder="Numero de Teléfono" 
-                    value={phone} 
-                    onEndEditing={validatePhone}
-                    onChangeText={text=>{
-                        setPhone(text);
-                        setPhoneError('')
-                    }} 
-                    keyboardType={'phone-pad'}>
-                </TextInput>
-            </View>
-            {!!phoneError && (<Text style={styles.errorLabel}>{phoneError}</Text>)}
-            {/*Address*/}
-            <View style={styles.row}>
-                <Text style={styles.label}>Dirección</Text>
-                <TextInput 
-                    style={styles.input} 
-                    placeholder="Calle, Colonia" 
-                    value={address} 
-                    onEndEditing={validateAddress}
-                    onChangeText={text=>{
-                        setAddress(text);
-                        setAddressError('')
+        <KeyboardAvoidingView>
+            <ScrollView style={styles.root}>
+                <View style={styles.row}>
+                    <Picker selectedValue={country} onValueChange={setCountry}>
+                        {countries.map(country => (
+                            <Picker.Item value={country.code} label={country.name} />
+                        ))}
+                    </Picker>
+                </View>
+                {/*FullName*/}
+                <View style={styles.row}>
+                    <Text style={styles.label}>Nombre (Empezando por apellidos)</Text>
+                    <TextInput style={styles.input} placeholder="Nombre Completo" value={fullname} onChangeText={setFullname}></TextInput>
+                </View>
+                {/*PhoneNumber*/}
+                <View style={styles.row}>
+                    <Text style={styles.label}>Numero de Teléfono</Text>
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Numero de Teléfono"
+                        value={phone}
+                        onEndEditing={validatePhone}
+                        onChangeText={text => {
+                            setPhone(text);
+                            setPhoneError('')
+                        }}
+                        keyboardType={'phone-pad'}>
+                    </TextInput>
+                </View>
+                {!!phoneError && (<Text style={styles.errorLabel}>{phoneError}</Text>)}
+                {/*Address*/}
+                <View style={styles.row}>
+                    <Text style={styles.label}>Dirección</Text>
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Calle, Colonia"
+                        value={address}
+                        onEndEditing={validateAddress}
+                        onChangeText={text => {
+                            setAddress(text);
+                            setAddressError('')
                         }} >
-                </TextInput>
-                {!!addressError && (<Text style={styles.errorLabel}>{addressError}</Text>)}
-            </View>
-            {/*City*/}
-            <View style={styles.row}>
-                <Text style={styles.label}>Ciudad</Text>
-                <TextInput 
-                    style={styles.input} 
-                    placeholder="Ciudad" 
-                    value={city} 
-                    onChangeText={setCity} >
-                </TextInput>
-            </View>
-            <Button text='Loguear' onPress={onCheckout}/>
+                    </TextInput>
+                    {!!addressError && (<Text style={styles.errorLabel}>{addressError}</Text>)}
+                </View>
+                {/*City*/}
+                <View style={styles.row}>
+                    <Text style={styles.label}>Ciudad</Text>
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Ciudad"
+                        value={city}
+                        onChangeText={setCity} >
+                    </TextInput>
+                </View>
+                <Button text='Loguear' onPress={onCheckout} />
 
-        </View>
+            </ScrollView>
+        </KeyboardAvoidingView>
     );
 };
 export default AddressScren;

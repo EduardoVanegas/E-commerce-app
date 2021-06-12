@@ -19,6 +19,7 @@ const HomeScreen = () =>{
 
 const styles = StyleSheet.create({
     page : {
+        flex : 1,
         padding : 10,
     },
 });

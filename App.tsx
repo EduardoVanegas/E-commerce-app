@@ -7,15 +7,15 @@
  *
  * @format
  */
-
- import React from 'react';
- import {SafeAreaView,StatusBar, useColorScheme,} from 'react-native';
-
- import {Colors} from 'react-native/Libraries/NewAppScreen';
- import HomeScreen from './src/screens/HomeScreen';
- import ProductScreen from './src/screens/ProductScreen';
- import ShoopingCartScreen from './src/screens/ShoopingCartScreen';
- import AddressScreen from './src/screens/AddressScreen';
+import 'react-native-gesture-handler';
+import React from 'react';
+import {SafeAreaView,StatusBar, useColorScheme, View,} from 'react-native';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
+import Router from './src/router';
+//  import HomeScreen from './src/screens/HomeScreen';
+//  import ProductScreen from './src/screens/ProductScreen';
+//  import ShoopingCartScreen from './src/screens/ShoopingCartScreen';
+//  import AddressScreen from './src/screens/AddressScreen';
  //import Icon from 'react-native-vector-icons/FontAwesome';
 
  const App = () => {
@@ -26,11 +26,11 @@
    };
 
    return (
-     <SafeAreaView style={backgroundStyle}>
+     <View style={backgroundStyle}>
        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
        {/*<ShoopingCartScreen/>*/}
-       <AddressScreen/>
-     </SafeAreaView>
+       <Router/>
+     </View>
    );
  };
 
