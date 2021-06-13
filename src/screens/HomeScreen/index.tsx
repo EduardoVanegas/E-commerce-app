@@ -1,9 +1,10 @@
 import React from 'react';
 import {View,FlatList,StyleSheet} from 'react-native';
 import ProductItem from '../../components/ProductItems'; 
-{/*import products from '../../data/products';*/}
 import Products from '../../data/products';
-const HomeScreen = () =>{
+
+const HomeScreen = ({searchValue}: {searchValue: string}) =>{
+    console.log(searchValue);
     return(
         <View style={styles.page}>
             {/*<ProductItem item={Products[0]} />*/}
@@ -13,7 +14,6 @@ const HomeScreen = () =>{
                 showsVerticalScrollIndicator={false}
             />
         </View>
-
     );
 };
 
