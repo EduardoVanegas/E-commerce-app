@@ -1,24 +1,23 @@
 export default {
   id: '5',
-  title: "Logitech MX Master 3 Advanced Wireless Mouse for Mac - Bluetooth/USB",
-  description: `Features & details
-  - MAGSPEED WHEEL: Ultra-fast, precise, quiet MagSpeed electromagnetic scrolling
-  - DARKFIELD 4000 DPI SENSOR: Darkfield 4000 DPI sensor for precise tracking on any surface, even glass (up to 4mm in thickness)
-  - COMFORTABLE DESIGN: Tactile reference for hand positioning makes it easy to stay oriented and in your flow
-  - FLOW CROSS-COMPUTER CONTROL: Supports flow cross-computer control across multiple screens. Pair up to 3 devices via Bluetooth Low Energy or Unifying USB receiver`,
-  image: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/products/mouse1.jpg',
+  title: "Cerdito de Barro Oaxaqueño",
+  description: `Detalles
+  - Artesiania de Oaxaca
+  - Material Resistente
+  -Hecho 100% a mano por artesanos expertos`,
+  image: 'https://aripo.oaxaca.gob.mx/wp-content/uploads/2021/05/IMG_3355-300x300.jpg',
   images: [
-    'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/products/mouse1.jpg',
-    'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/products/mouse2.jpg',
-    'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/products/mouse3.jpg',
+    'https://aripo.oaxaca.gob.mx/wp-content/uploads/2021/05/IMG_3355-300x300.jpg',
+    'https://aripo.oaxaca.gob.mx/wp-content/uploads/2021/05/IMG_3357-100x100.jpg',
+    'https://aripo.oaxaca.gob.mx/wp-content/uploads/2021/05/IMG_3358-100x100.jpg',
   ],
   options: [
-    'Black',
-    'Space Grey',
-    'papi chulo'
+    'Rosa',
+    'Morado',
+    'Verde'
   ],
-  avgRating: 4.8,
-  ratings: 2989,
-  price: 99.98,
-  oldPrice: 120.06,
+  avgRating: 5,
+  ratings: 6000,
+  price: 300,
+  oldPrice: 24.06,
 };
